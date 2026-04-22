@@ -4,6 +4,7 @@
 
 | 表名 | 粒度 | 说明 |
 | --- | --- | --- |
+| `原始数据_<来源>` | 原始行 | 用户上传 Excel/CSV 的原始事实表；单文件导入时优先复用飞书导入生成的表，或复用默认 `数据表` |
 | `00_输入数据目录` | 文件/工作表 | 来源文件、sheet、行列数、时间范围、导入时间 |
 | `01_字段字典与质量检查` | 字段 | 字段类型、缺失率、唯一值数、异常说明 |
 | `02_分析问题与指标口径` | 指标/问题 | 业务问题、指标定义、公式、过滤条件 |
@@ -36,12 +37,14 @@
 
 ## 创建顺序
 
-1. 创建 Base：读 `lark-base-base-create.md`。
-2. 创建子表：读 `lark-base-table-create.md`。
-3. 创建字段：读 `lark-base-field-create.md` 和 `lark-base-shortcut-field-properties.md`。
-4. 写入记录：读 `lark-base-record-batch-create.md` 和 `lark-base-shortcut-record-value.md`。
-5. 创建视图：按需读 `lark-base-view-create.md`、筛选/排序/分组/可见字段文档。
-6. 创建看板：读 dashboard 相关文档。
+1. 单个 Excel/CSV 优先导入 Base：读 `lark-drive-import.md`。
+2. 如果需要新建 Base：读 `lark-base-base-create.md`，随后立即复用/重命名默认 `数据表` 承载第一张原始表，不要留下空表。
+3. 写入原始数据前处理默认字段：把默认主字段改造为业务主键或 `源记录键`；删除可删的无关默认字段；接口限制无法删除的字段必须从主要视图隐藏。
+4. 创建子表：读 `lark-base-table-create.md`。
+5. 创建字段：读 `lark-base-field-create.md` 和 `lark-base-shortcut-field-properties.md`。
+6. 写入记录：读 `lark-base-record-batch-create.md` 和 `lark-base-shortcut-record-value.md`。
+7. 创建视图：按需读 `lark-base-view-create.md`、筛选/排序/分组/可见字段文档。
+8. 创建看板：读 dashboard 相关文档。
 
 ## 批量写入约束
 

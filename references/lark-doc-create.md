@@ -667,7 +667,7 @@ $$
 
 ## 参考
 
-- [lark-doc-fetch](lark-doc-fetch.md) — 获取文档
+- `lark-doc-fetch.md` — 获取文档
 - [lark-doc-update](lark-doc-update.md) — 更新文档
 - [lark-doc-media-insert](lark-doc-media-insert.md) — 插入图片/文件到文档
 - [auth-and-permission.md](auth-and-permission.md) — 认证和全局参数
